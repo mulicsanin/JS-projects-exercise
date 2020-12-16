@@ -35,15 +35,17 @@ h1{
     margin:1.3em;
     font-size:2em;
 }
-.pick-container{
+.form{
     width: 100%;
    margin-top:5rem;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
 }
-.pick-container input{
+.form input{
     height: 80%;
+    font-size: 1.2rem;
+    padding:1rem;
 }
 .date-c{
     font-display: flex;
@@ -53,4 +55,17 @@ h1{
 .labelDate{
     font-size: 2rem;
 }
-
+.sss
+{
+    width: 40%;
+    min-width: 30%;
+    height: 40px;
+    max-height: 60px;
+    background-color: rgb(78, 75, 75);
+    color:#f5f5f5;
+    font-size: 1rem;
+}
+.sss:hover{
+    background-color:#f5f5f5;
+    color: rgb(8, 8, 8);
+}
