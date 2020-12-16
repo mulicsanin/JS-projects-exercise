@@ -32,6 +32,9 @@ h1{
 .todos{
     font-size: 1.5rem;
 }
+.todos:hover{
+    border:1px solid black;
+}
 .todos li.completed{
     text-decoration: line-through;
     text-decoration-thickness: 2px;
