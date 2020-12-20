@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Weight Converter</h1>
+        <br/>
+        <form class="formConvert" id="formConvert">
+            <div class="convert">
+                <label for="convert">CONVERT:</label>
+                <select name="convert" class="convOpt" id="convOpt">
+                    <option value="1" class="option" >Choose</option>
+                    <option value="2" class="option" id="conOpt1">Kilograms</option>
+                    <option value="3" class="option" id="conOpt2">Grams</option>
+                    <option value="4" class="option" id="conOpt3">LBS</option>
+                </select>
+            </div>
+        </form>
+        <form class="formInput" id="formInput">
+            <input type="number" class="input" id="input" placeholder="0.00" autocomplete="off" >
+        </form>
+        <div class="box-container">
+            <div class="box" id="kg">Kg</div>
+            <div class="box" id="g">g</div>
+            <div class="box" id="lbs">lbs</div>
+        </div>
+        <div class="converted" id="converted"></div>
+        <button class="refresh" id="refresh">Refresh</button>
+        <p class="about">If you change convert selection, change the value.</p>
+    </div>
+</body>
+</html>

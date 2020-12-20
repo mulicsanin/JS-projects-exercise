@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    margin:0;
+    background-image:url('img/bg-main.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 150px 150px; 
+}
+.container{
+    width:100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+.title{
+    font-size: 4.8rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.formConvert{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    margin:20px 0;
+}
+label{
+    font-size: 2rem;
+    margin-right: 20px;
+}
+.convOpt{
+    padding: 0 7px;
+    height: 50px;
+    min-height: 40px;
+    margin:20px;
+}
+.option{
+   width:300px;
+   max-width: 400px;
+   min-width: 300px;
+   font-size: 20px;
+}
+.formInput{
+    width: 100%;
+    margin:20px 0;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+input{
+    min-width: 80px;
+    padding:15px;
+    font-size: 20px;
+}
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin:20px 20%;
+}
+.box{
+    height: 80px;
+    width: 80px;
+    font-size: 2rem;
+    background-color: rgba(225, 225, 225, 0.5);
+    padding:15px;
+    text-align: center;
+}
+.converted{
+    height: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    text-align: center;
+    padding:5px;
+    font-size: 1.6rem;
+}
+.refresh{
+    width: 20%;
+    height: 50px;
+    background-color: rgb(66, 61, 44);
+    margin-top:40px;
+    text-align: center;
+    margin-left: 40%;
+    color:white;
+    font-size: 1.5rem;
+}
+.about{
+    text-align: center;
+    font-size: 1rem;
+    color:rgb(63, 58, 58);
+}
+/*
+    na pritisak convert povuci broj (1,2,3).
+    napisani broj povuci zasebno,
+    odabrati u sta ( click-event ) - povuci i prebaciti u "converted"
+*/
