@@ -6,6 +6,7 @@ class Calculator{
         this.clear();
     };
 
+    //Deleting output
     clear()
     {
         this.currentOperand='';
@@ -13,17 +14,20 @@ class Calculator{
         this.operation=undefined;
     }
 
+    //Deleting last input
     delete()
     {
         this.currentOperand=this.currentOperand.toString().slice(0, -1);
     }
 
+    //adding number to output
     appendNumber(number)
     {
         if(number=== '.' && this.currentOperand.includes('.')) return;
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
+    //adding operation to output
     chooseOperation(operation)
     {
         if(this.currentOperand === '') return;
@@ -36,6 +40,7 @@ class Calculator{
         this.currentOperand='';
     }
 
+    //computing operations
     compute()
     {    
         let computation;
@@ -69,6 +74,8 @@ class Calculator{
         this.operation=undefined;
         this.previousOperand='';
     }
+
+    // method which get number with ',' (3,000 over 3000)
     getDisplayNumber(number)
     {
         const floatNumber= parseFloat(number);
@@ -76,6 +83,7 @@ class Calculator{
 
         return floatNumber.toLocaleString('en');
     }
+    
     updateDisplay()
     {
         this.currentOperandText.innerText=this.getDisplayNumber(this.currentOperand);
