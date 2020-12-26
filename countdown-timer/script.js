@@ -64,7 +64,7 @@ aid.addEventListener('click', (e) => {
 christmas.addEventListener('click', (e) => {
     e.preventDefault();
     title.innerHTML="Christmas"
-    time="26 December 2020";
+    time="25 December 2021";
     saveToLocalStorage('Title', title.innerHTML);
     saveToLocalStorage('Date', time.toString());
     countdown();
