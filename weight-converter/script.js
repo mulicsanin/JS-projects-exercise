@@ -1,4 +1,3 @@
-
 let input=document.getElementById("input");
 let output=document.getElementById("converted");
 const Kilograms=document.getElementById("kg");
@@ -7,7 +6,7 @@ const pounds=document.getElementById("lbs");
 let option=document.getElementsByTagName("option");
 let kg, g, lbs;
 document.getElementById("convOpt").addEventListener('change', () =>{
-    convert=document.getElementById("convOpt").selectedIndex;
+    let convert=document.getElementById("convOpt").selectedIndex;
     myFunction(convert);
 });
 function myFunction(opt)
