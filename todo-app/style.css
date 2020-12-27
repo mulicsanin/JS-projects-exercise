@@ -31,9 +31,15 @@ h1{
 }
 .todos{
     font-size: 1.5rem;
+    overflow-wrap: break-word;
+    background-color: rgb(216, 224, 224);
 }
-.todos:hover{
+.todos li{
+    margin: 10px 0;
+}
+.todos li:hover{
     border:1px solid black;
+    background-color: rgba(81, 82, 79, 0.014);
 }
 .todos li.completed{
     text-decoration: line-through;
