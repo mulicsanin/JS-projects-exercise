@@ -51,7 +51,7 @@ function addTodo(todo)
        updateLS();
        input.value="";
     }
-}
+};
 
 function updateLS()
 {
@@ -67,4 +67,4 @@ function updateLS()
 
     localStorage.setItem('todos', JSON.stringify(todosLS));
     
-}  
+}; 
