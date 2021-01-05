@@ -1,5 +1,5 @@
 const board = document.getElementById('board');
-const cellEl = document.querySelectorAll('[data-cell');
+const cellEl = document.querySelectorAll('[data-cell]');
 
 let circleTurn;
 const x_class = 'x';
