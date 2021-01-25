@@ -73,7 +73,7 @@ christmas.addEventListener('click', (e) => {
 newY.addEventListener('click', (e) => {
     e.preventDefault();
     title.innerHTML="New Year"
-    time="1 January 2021";
+    time="1 January 2022";
     saveToLocalStorage('Title', title.innerHTML);
     saveToLocalStorage('Date', time.toString());
     countdown();
@@ -96,7 +96,7 @@ form.addEventListener("submit", (e) => {
     saveToLocalStorage('Title', title.innerHTML);
     saveToLocalStorage('Date', time.toString());
     input.value="";
-    dateEl.value="1/1/2020";
+    dateEl.value="1/1/2021";
     countdown();
     setInterval(countdown, 1000);
 });
