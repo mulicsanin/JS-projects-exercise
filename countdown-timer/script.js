@@ -16,7 +16,7 @@ const storedTitle = localStorage.getItem('Title');
 const storedDate = localStorage.getItem('Date');
 
 //manual added time for first site visiting
-var time="1 January 2021";
+var time="1 January 2022";
 
 // making sure if something was saved previously
 if(storedTitle && storedDate)
