@@ -4,9 +4,7 @@ const MinutesEl = document.getElementById('minutes');
 const SecondsEl = document.getElementById('seconds');
 
 const title=document.getElementById('title');
-const aid=document.getElementById("aid");
-const christmas=document.getElementById("christmas");
-const newYear=document.getElementById("newY");
+const btnClicked = document.querySelectorAll('[data-target]');
 
 const input=document.getElementById('pickTitle');
 const form=document.getElementById('form');
@@ -15,7 +13,7 @@ const dateEl=document.getElementById('pickDate');
 const storedTitle = localStorage.getItem('Title');
 const storedDate = localStorage.getItem('Date');
 
-//manual added time for first site visiting
+//manually added time for first site visiting
 var time="1 January 2022";
 
 // making sure if something was saved previously
@@ -51,35 +49,32 @@ function formatTime(time)
 countdown();
 setInterval(countdown, 1000);
 
+// Buttons clicked for event
+btnClicked.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-aid.addEventListener('click', (e) => {
-    e.preventDefault();
-    title.innerHTML="Aid"
-    time="20 July 2021";
-    saveToLocalStorage('Title', title.innerHTML);
-    saveToLocalStorage('Date', time.toString());
-    countdown();
-    setInterval(countdown, 1000);
-});
-christmas.addEventListener('click', (e) => {
-    e.preventDefault();
-    title.innerHTML="Christmas"
-    time="25 December 2021";
-    saveToLocalStorage('Title', title.innerHTML);
-    saveToLocalStorage('Date', time.toString());
-    countdown();
-    setInterval(countdown, 1000);
-})
-newY.addEventListener('click', (e) => {
-    e.preventDefault();
-    title.innerHTML="New Year"
-    time="1 January 2022";
-    saveToLocalStorage('Title', title.innerHTML);
-    saveToLocalStorage('Date', time.toString());
-    countdown();
-    setInterval(countdown, 1000);
+        title.innerHTML=btn.innerHTML;
+        saveToLocalStorage('Title', title.innerHTML);
+        if(btn.innerHTML === 'Aid')
+        {
+            time="20 July 2021";
+        }
+        else if(btn.innerHTML === 'Christmas')
+        {
+            time="25 December 2021";
+        }
+        else
+        {
+            time="1 January 2022";
+        }
+        saveToLocalStorage('Date', time.toString());
+        countdown();
+        setInterval(countdown, 1000);
+    });
 })
 
+// Saving values to Local Storage
 function saveToLocalStorage(storedName, storedValue) {
     localStorage.setItem(storedName, storedValue);
 }
