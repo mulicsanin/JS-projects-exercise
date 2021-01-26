@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <button type="submit" class="sss" id="newY">New Year</button>
-    <button type="submit" class="sss" id="christmas">Christmas</button>
-    <button type="submit" class="sss" id="aid">Aid</button>
-    
+    <div class="buttons-wrapper">
+        <button type="submit" class="sss" id="newY" data-target>New Year</button>
+        <button type="submit" class="sss" id="christmas" data-target>Christmas</button>
+        <button type="submit" class="sss" id="aid" data-target>Aid</button>
+    </div>
     <h1 id="title">New Year</h1>
     
     <div class="countdown-container">
@@ -41,7 +41,10 @@
             <label for="description" class="labelDate" >Choose a title:</label>
             <input type="text" id='pickTitle' id="description" placeholder="title" autocomplete="off">
         </div>
-
+        
     </div>
+
+
+    <script src="script.js" defer></script>
 </body>
 </html>
