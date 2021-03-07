@@ -1,3 +1,0 @@
-package
-package-lock
-node_modules
