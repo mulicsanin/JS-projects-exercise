@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <title>Whack A Mole</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section id="mole-game">
+
+        <h1>Whack-a-mole! <span class="score">0</span></h1>
+        <button class="startBtn" onClick="startGame()">Start!</button>
+        
+        <div class="game">
+          <div class="hole hole1">
+            <div class="mole"></div>
+          </div>
+          <div class="hole hole2">
+            <div class="mole"></div>
+          </div>
+          <div class="hole hole3">
+            <div class="mole"></div>
+          </div>
+          <div class="hole hole4">
+            <div class="mole"></div>
+          </div>
+          <div class="hole hole5">
+            <div class="mole"></div>
+          </div>
+          <div class="hole hole6">
+            <div class="mole"></div>
+          </div>
+        </div>
+    
+        <div id="scoreBoard">
+          <table class="scoreTable">
+            <thead>
+              <th onclick="sortTable(0)">Nickname</th>
+              <th onclick="sortTable(1)">SCORE</th>
+            </thead>
+            <tbody>
+              <!--NEW ROWS-->
+            </tbody>
+          </table>
+        </div>
+      </section>
+</body>
+</html>
