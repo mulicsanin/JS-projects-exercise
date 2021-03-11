@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
+:root{
+    --back-wrong: #d12121;
+    --back-correct: #25b325; 
+    --back-neutral: #4d6e8d;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+.correct{
+    background-color: var(--back-correct);
+    color:black;
+}
+.wrong{
+    background-color: var(--back-wrong);
+    color:black;
+}
+
+.game-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/backgr.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.q-container{
+    padding:50px;
+    background-color: #65cac2;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom:50px;
+}
+.answers-container{
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    margin: 10px 30px;
+}
+
+.hide{
+   display: none; 
+}
+
+#start-btn, #next-btn{
+    padding:20px;
+    margin-top:20px;
+    background-color: #431267;
+    color:white;
+    font-size: 1.5rem;
+}
+#next-btn{
+    padding:10px 20px;
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+#score{
+    margin-top: 30px;
+    font-size: 5rem;
+}
