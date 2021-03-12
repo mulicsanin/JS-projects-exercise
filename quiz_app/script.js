@@ -5,7 +5,7 @@ const answersCheckbox = document.getElementById('answers-container')
 const questionElement = document.getElementById('question');
 const scoreResult = document.getElementById('score');
 let score = 0, questionIndex, inputChecked = 0, correctAnswer;
-//let correctAnswers=[], answerIndex = 0;
+
 
 const labels = document.querySelectorAll('label'); 
 
@@ -36,22 +36,23 @@ function endGame(){
 //when next button is clicked
 function next(){
     const inputs = document.querySelectorAll('input');
+    let sum = 0;
     inputs.forEach(input =>{
         if(input.checked == true)
         {
             inputChecked++;
-            //if the answer is correct you get 15 points, elsewhere you lose 5 points.
-            if(input.parentElement.innerText == correctAnswer)
+            //if the answer is incorrect you get 15 points, elsewhere you lose 5 points.
+            if(input.parentElement.innerText != correctAnswer)
             {
-                score = score + 15;
-            }
-            else{
-                score = score - 5;
-            }
+               sum++;
+            }   
         }
     });
-    if(inputChecked <= 0){
-        score = score - 5;
+    if(sum > 0 || inputChecked <= 0){
+        score -= 5;
+    }
+    else{
+        score += 15;
     }
     
     if(questions.length > questionIndex)
