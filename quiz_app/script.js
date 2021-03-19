@@ -4,7 +4,7 @@ const questionContainer = document.getElementById('q-container');
 const answersCheckbox = document.getElementById('answers-container')
 const questionElement = document.getElementById('question');
 const scoreResult = document.getElementById('score');
-let score = 0, questionIndex, inputChecked = 0, correctAnswer;
+let score = 0, questionIndex, inputChecked = 0, correctAnswer= [];
 
 
 const labels = document.querySelectorAll('label'); 
@@ -19,7 +19,6 @@ function startGame()
     startBtn.classList.add('hide');
     scoreResult.innerText = `Your score is`;
     scoreResult.classList.add('hide');
-    //answerIndex = 0;
     questionIndex = 0;
     score = 0;
     nextQuestion();
@@ -36,25 +35,35 @@ function endGame(){
 //when next button is clicked
 function next(){
     const inputs = document.querySelectorAll('input');
-    let sum = 0;
+    let sum = 0, isCorrectAnswer = 0;
+    inputChecked = 0;
     inputs.forEach(input =>{
         if(input.checked == true)
         {
             inputChecked++;
-            //if the answer is incorrect you get 15 points, elsewhere you lose 5 points.
-            if(input.parentElement.innerText != correctAnswer)
+            if(!correctAnswer.includes(input.parentElement.innerText))
             {
                sum++;
-            }   
+            }  
+            else{
+                isCorrectAnswer++;
+            }
         }
     });
+    // if incorrect answer is checked or no answer is checked
     if(sum > 0 || inputChecked <= 0){
         score -= 5;
     }
     else{
-        score += 15;
+        //if all correct answers are checked
+        if(correctAnswer.length == isCorrectAnswer){
+            score += 15;   
+        }
+        else{
+            score -=5;
+        }
     }
-    
+    //if there is more questions
     if(questions.length > questionIndex)
     {
         nextQuestion();
@@ -83,6 +92,7 @@ function resetQuestions(){
 //adding question with answers on body
 function showQuestion(Question)
 {
+    correctAnswer = [];
     questionElement.innerHTML = Question.question;
     Question.answers.forEach(answer => {
         const label = document.createElement('label');
@@ -93,7 +103,7 @@ function showQuestion(Question)
         label.classList.add('label');
         if(answer.correct === true)
         {
-            correctAnswer = label.innerText;
+            correctAnswer.push(label.innerText);
         }
         answersCheckbox.appendChild(label);
     });
@@ -102,7 +112,7 @@ function showQuestion(Question)
 //list of questions
 const questions= [
     { 
-        question: "What is the size of football pitch?",
+        question: "What is the size of the football pitch?",
         answers: [
             { text: '100m', correct: true},
             { text: '30m', correct: false},
@@ -148,7 +158,7 @@ const questions= [
         answers: [
             { text: 'Cricket', correct: true},
             { text: 'Skiing', correct: false},
-            { text: 'Hockey', correct: false},
+            { text: 'Football', correct: true},
             { text: 'Box', correct: false}
         ] 
     }
