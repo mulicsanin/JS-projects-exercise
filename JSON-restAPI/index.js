@@ -68,7 +68,7 @@ function WindDirectionIcon(d) {
 var dir = 0;
 function Change() {
   let City = document.getElementById('CityName').value;
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${City}&appid=b1ae615b731a98a586905a201b7f75af`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=b1ae615b731a98a586905a201b7f75af`;
 
   fetch(url)
     .then((r) => {
