@@ -1,0 +1,18 @@
+/*MINIMUM STYLING*/
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+  text-align: center;
+}
+table {
+  margin: 10px 0;
+}
+button {
+  margin: 20px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+}

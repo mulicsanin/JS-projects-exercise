@@ -4,39 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>API Weather</title>
   </head>
-  <style>
-    table,
-    tr,
-    td,
-    th {
-      border: 1px solid;
-      text-align: center;
-    }
-    table {
-      margin: 10px 0;
-    }
-    button {
-      margin: 20px;
-      padding: 10px;
-    }
-  </style>
   <body>
     <input id="CityName" style="width: 300px" value="Sarajevo" />
     <button onclick="getAPI()">ENTER</button>
-    <table id="tableID">
-      <tr>
-        <th>City</th>
-        <th>Time</th>
-        <th>Temp</th>
-        <th>Description</th>
-        <th>Humidity</th>
-        <th>Wind speed</th>
-        <th>Wind direction</th>
-        <th>Pressure</th>
-      </tr>
-    </table>
+    <div style="overflow-x: auto">
+      <table id="tableID">
+        <tr>
+          <th>City</th>
+          <th>Time</th>
+          <th>Temp</th>
+          <th>Description</th>
+          <th>Humidity</th>
+          <th>Wind speed</th>
+          <th>Wind direction</th>
+          <th>Pressure</th>
+        </tr>
+      </table>
+    </div>
     <div style="display: flex">
       <button id="Change" onclick="Change()">Change</button>
       <button id="Download" onclick="Download()">Download</button>
