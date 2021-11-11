@@ -16,3 +16,4 @@
 	- I personally have the account on Netlify, where I have a few landing pages, so I deployed the app in there.
 	-For viewing the application visit this link:  https://json-restapi.netlify.app/
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/564b13e9-4110-4528-a3e0-9c274dc22f04/deploy-status)](https://app.netlify.com/sites/json-restapi/deploys)
