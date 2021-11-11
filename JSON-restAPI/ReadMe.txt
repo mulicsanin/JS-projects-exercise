@@ -1,4 +1,4 @@
-# Project title: SofthouseTask
+# Project title: Rest Api for Weather
 
 # Description: 	This application reads a collection of data from OpenWeatherMap rest API source. It presents that data on the application front-end.
 		This application uses basic native JavaScript for operations, HTML and a little CSS for design.
@@ -9,5 +9,10 @@
 		
 # How to install the application?
 	- This application needs to be commited to github, where we can deploy it on github pages, to make is usable.
-	-For viewing visit this link: 
+		-unzip the folder,
+		-commit it on repository that you can make on github,
+		-go on github -> settings -> pages  -> and publish it on github.io
+
+	- I personally have the account on Netlify, where I have a few landing pages, so I deployed the app in there.
+	-For viewing the application visit this link:  https://json-restapi.netlify.app/
 
