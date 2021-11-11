@@ -1,34 +1,19 @@
-//download JSON in a file
-function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute(
-    'href',
-    'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
-  );
-  element.setAttribute('download', filename);
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-}
-
-//getting API data
+//Getting the name of the city from input
+let City = document.getElementById('CityName').value;
+//Getting url from OpenWeatherMap api, with forwarded city
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=b1ae615b731a98a586905a201b7f75af`;
+const tableData = document.getElementById('tableID');
+//Getting API data
 function getAPI() {
-  let City = document.getElementById('CityName').value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=b1ae615b731a98a586905a201b7f75af`;
-
   fetch(url)
     .then((r) => {
       if (r.status !== 200) {
-        alert('Greska u sistemu. ' + r.status);
+        alert('System error. ' + r.status);
         return;
       }
 
       r.json().then((x) => {
-        var noviRed =
+        var newRow =
           '<tr><td>' +
           x.name +
           '</td><td>' +
@@ -48,11 +33,11 @@ function getAPI() {
           x.main.pressure +
           '</td></tr>';
 
-        document.getElementById('tabelaID').innerHTML += noviRed;
+        tableData.innerHTML += newRow;
       });
     })
     .catch((err) => {
-      alert('Greska u sistemu: ' + err);
+      alert('System error: ' + err);
     });
 }
 
@@ -65,21 +50,21 @@ function WindDirectionIcon(d) {
     'deg)">'
   );
 }
-var dir = 0;
-function Change() {
-  let City = document.getElementById('CityName').value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=b1ae615b731a98a586905a201b7f75af`;
 
+//variable that saves wind direction data, for JSON file
+var dir = 0;
+//Changing the collection data (Time, Temp, Description and adding direction icon to WindDirection)
+function Change() {
   fetch(url)
     .then((r) => {
       if (r.status !== 200) {
-        alert('Greska u sistemu. ' + r.status);
+        alert('System error. ' + r.status);
         return;
       }
 
       r.json().then((x) => {
-        document.getElementById('tabelaID').innerHTML = '';
-        document.getElementById('tabelaID').innerHTML = `   <tr>
+        tableData.innerHTML = '';
+        tableData.innerHTML = `   <tr>
         <th>City</th>
         <th>Time</th>
         <th>Temp</th>
@@ -90,17 +75,18 @@ function Change() {
         <th>Pressure</th>
       </tr>`;
         var Time = new Date(x.dt * 1000);
-        var cityname = x.name;
+        var CityName = x.name;
         var Temp = x.main.temp - 272.15;
         var Description = x.weather[0].main + ' ' + x.weather[0].description;
         var Humidity = x.main.humidity;
         var WindSpeed = x.wind.speed;
         var WindDirection = x.wind.deg;
+        //variable used
         dir = WindDirection;
         var Pressure = x.main.pressure;
-        var noviRed =
+        var newRow =
           '<tr><td>' +
-          cityname +
+          CityName +
           '</td><td>' +
           Time +
           '</td><td>' +
@@ -120,11 +106,11 @@ function Change() {
           Pressure.toFixed(2) +
           '</td></tr>';
 
-        document.getElementById('tabelaID').innerHTML += noviRed;
+        tableData.innerHTML += newRow;
       });
     })
     .catch((err) => {
-      alert('Greska u sistemu: ' + err);
+      alert('System error: ' + err);
     });
 }
 
@@ -150,11 +136,27 @@ function tableToJson(table) {
   return data;
 }
 
+//download JSON in a file
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute(
+    'href',
+    'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
+  );
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
 const Download = () => {
-  const tabela = document.getElementById('tabelaID');
   var cell = document.getElementById('clsReadOnly');
+  //variable used
   cell.innerHTML = dir;
-  const jsonTabela = tableToJson(tabela);
-  const data = JSON.stringify(jsonTabela);
+  const jsonTable = tableToJson(tableData);
+  const data = JSON.stringify(jsonTable);
   download('data.txt', data);
 };
