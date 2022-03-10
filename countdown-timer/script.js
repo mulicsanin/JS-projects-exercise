@@ -14,7 +14,7 @@ const storedTitle = localStorage.getItem('Title');
 const storedDate = localStorage.getItem('Date');
 
 //manually added time for first site visiting
-var time = '1 January 2022';
+var time = '1 January 2023';
 
 // making sure if something was saved previously
 if (storedTitle && storedDate) {
@@ -56,9 +56,9 @@ btnClicked.forEach((btn) => {
     if (btn.innerHTML === 'Aid') {
       time = '09 July 2022';
     } else if (btn.innerHTML === 'Christmas') {
-      time = '25 December 2021';
+      time = '25 December 2022';
     } else {
-      time = '1 January 2022';
+      time = '1 January 2023';
     }
     saveToLocalStorage('Date', time.toString());
     countdown();
